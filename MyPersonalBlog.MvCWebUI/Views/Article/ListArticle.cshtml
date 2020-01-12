@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Article>
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h2>Makale Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni", "AddArticle", "Article")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Firstname)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Firstname)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EditArticle", new { id = item.Id }) |
+            @Html.ActionLink("Sil", "DeleteArticle", new { id = item.Id })
+        </td>
+    </tr>
+    }
+</table>
+

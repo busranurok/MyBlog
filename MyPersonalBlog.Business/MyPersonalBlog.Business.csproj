@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D1B8C6C-D98C-426F-922C-5980B90C4466}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyPersonalBlog.Business</RootNamespace>
+    <AssemblyName>MyPersonalBlog.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAdditionalInfoService.cs" />
+    <Compile Include="Abstract\IArticleService.cs" />
+    <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\ICommentService.cs" />
+    <Compile Include="Abstract\IContactService.cs" />
+    <Compile Include="Abstract\IDislikedService.cs" />
+    <Compile Include="Abstract\IDisplayedService.cs" />
+    <Compile Include="Abstract\IEducationService.cs" />
+    <Compile Include="Abstract\IEntityRepositoryService.cs" />
+    <Compile Include="Abstract\IJobExperienceService.cs" />
+    <Compile Include="Abstract\ILikedService.cs" />
+    <Compile Include="Abstract\ISeminarService.cs" />
+    <Compile Include="Abstract\ICertificateService.cs" />
+    <Compile Include="Abstract\ISkillService.cs" />
+    <Compile Include="Abstract\ISubscriberService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
+    <Compile Include="Concrete\Manager\AdditionalInfoManager.cs" />
+    <Compile Include="Concrete\Manager\ArticleManager.cs" />
+    <Compile Include="Concrete\Manager\CategoryManager.cs" />
+    <Compile Include="Concrete\Manager\CertificateManager.cs" />
+    <Compile Include="Concrete\Manager\CommentManager.cs" />
+    <Compile Include="Concrete\Manager\ContactManager.cs" />
+    <Compile Include="Concrete\Manager\DisplayedManager.cs" />
+    <Compile Include="Concrete\Manager\EducationManager.cs" />
+    <Compile Include="Concrete\Manager\JobExperienceManager.cs" />
+    <Compile Include="Concrete\Manager\LikedManager.cs" />
+    <Compile Include="Concrete\Manager\SeminarManager.cs" />
+    <Compile Include="Concrete\Manager\SkillManager.cs" />
+    <Compile Include="Concrete\Manager\SubscriberManager.cs" />
+    <Compile Include="Concrete\Manager\UserManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPersonalBlog.Entities\MyPersonalBlog.Entities.csproj">
+      <Project>{552c8fec-17e9-45a3-aadb-b16d7fc2ed64}</Project>
+      <Name>MyPersonalBlog.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyPersonalBlog\MyPersonalBlog.DataAccess.csproj">
+      <Project>{67803659-1598-4dd1-9b24-84d4dee319da}</Project>
+      <Name>MyPersonalBlog.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyPersonelBlog.Common\MyPersonelBlog.Common.csproj">
+      <Project>{4a45509c-aa1e-472a-8d2e-c080f94cdeff}</Project>
+      <Name>MyPersonelBlog.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

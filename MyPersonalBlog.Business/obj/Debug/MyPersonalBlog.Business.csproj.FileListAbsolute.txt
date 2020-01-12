@@ -1,0 +1,16 @@
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.Business.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.Business.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.Entities.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonelBlog.Common.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\EntityFramework.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.Entities.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonalBlog.dll.config
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\MyPersonelBlog.Common.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\bin\Debug\EntityFramework.xml
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\obj\Debug\MyPersonalBlog.Business.csprojAssemblyReference.cache
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\obj\Debug\MyPersonalBlog.Business.csproj.CoreCompileInputs.cache
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\obj\Debug\MyPersonalBlog.Business.csproj.CopyComplete
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\obj\Debug\MyPersonalBlog.Business.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonalBlog.Business\obj\Debug\MyPersonalBlog.Business.pdb

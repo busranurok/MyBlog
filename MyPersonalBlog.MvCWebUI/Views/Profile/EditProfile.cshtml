@@ -1,0 +1,69 @@
+﻿@model UserViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+
+@using (Html.BeginForm("EditProfile", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container" style="padding-top: 60px;">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="text-center">
+                    <img src="~/img/@Model.User.ProfileImageFilename" class="avatar img-circle img-thumbnail" alt="avatar">
+                    @Html.HiddenFor(model => model.User.ProfileImageFilename)
+                    <h6>Lütfen jpg, jpeg, png formatı fotoğraf yükle.</h6>
+                    <input type="file" name="ProfileImage" id="ProfileImage" class="text-center center-block well well-sm">
+                </div>
+            </div>
+            <!-- edit form column -->
+            <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+                <h3>Kişisel Bilgilerim</h3>
+                <form class="form-horizontal" role="form">
+                    @Html.ValidationSummary(false)
+                    @Html.HiddenFor(model => model.User.Id)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.Firstname, htmlAttributes: new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            <input class="form-control" name="User.Firstname" value="@Model.User.Firstname" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.Lastname, htmlAttributes: new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            <input class="form-control" name="User.Lastname" value="@Model.User.Lastname" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.Email, htmlAttributes: new { @class = "control-label col-lg-3" })
+                        <div class="col-lg-8">
+                            <input class="form-control" name="User.Email" value="@Model.User.Email" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.Password, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-8">
+                            <input class="form-control" value="@Model.User.Password" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.User.Password, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-8">
+                            <input class="form-control" name="User.Password" value="@Model.User.Password" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-8">
+                            <input type="submit" value="Kaydet" class="btn btn-primary" />
+                            <span></span>
+                            @Html.ActionLink("İptal", "ShowProfile", "Profile", null, new { @class = "btn btn-default" })
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

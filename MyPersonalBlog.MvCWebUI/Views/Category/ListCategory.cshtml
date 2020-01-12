@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewBag.Title = "ListCategory";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Yeni", "AddCategory", "Category")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryDescription)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryDescription)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EditCategory", new { id = item.Id }) |
+                @Html.ActionLink("Sil", "DeleteCategory", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

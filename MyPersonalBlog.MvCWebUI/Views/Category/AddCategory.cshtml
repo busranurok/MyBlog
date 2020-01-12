@@ -1,0 +1,42 @@
+﻿@model CategoryViewModel
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
+{
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="container-fluid">
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Form Name -->
+                <legend>Kategori Form</legend>
+                <!-- Text input-->
+                @Html.HiddenFor(x => x.Category.Id)
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="article_url">Kategori Başlığı</label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(x => x.Category.CategoryTitle, new { @class = "form-control input-md" })
+
+                    </div>
+                </div>
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="source_description">Kategori İçeriği</label>
+                    <div class="col-md-4">
+                        @Html.TextAreaFor(x => x.Category.CategoryDescription, new { @class = "form-control input-md" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                        <span></span>
+                        @Html.ActionLink("İptal", "ListCategory", "Category", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+}

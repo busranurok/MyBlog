@@ -1,0 +1,58 @@
+﻿@model ContactViewModel
+@{
+    ViewBag.Title = "İletişim";
+    Layout = null;
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Questrial|Droid+Sans|Alice' rel='stylesheet' type='text/css'>
+    <link href="~/Content/contact.css" rel="stylesheet" />
+</head>
+<body>
+    @{
+        if (ViewBag.Success == true)
+        {
+            <span>Mesajınız başarıyla gönderilmiştir.</span>
+        }
+    }
+
+    @using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row">
+                <div></div>
+                <img id="postcard" src="https://g.hizliresim.com/dokulu-turk-bayragi-f189" width="619" height="374" alt="postcard" class="img-responsive move">
+                <div id="content">
+                    <h1> İletişim Formu </h1>
+                    <form role="form">
+                        <div class="form-group">
+                            <label>Ad</label> <span class="required">*</span> @Html.TextBoxFor(model => model.Contact.Firstname, new { @class = "form-control", placeholder = "Adınızı girin...", id = "firstname", type = "text", required = "required" })
+                        </div>
+                        <div class="form-group">
+                            <label>Soyad</label> <span class="required">*</span> @Html.TextBoxFor(model => model.Contact.Lastname, new { @class = "form-control", placeholder = "Soyadınızı girin...", id = "lastname", type = "text", required = "required" })
+                        </div>
+                        <div class="form-group">
+                            <label>E-posta</label> <span class="required">*</span> @Html.TextBoxFor(model => model.Contact.Email, new { @class = "form-control", placeholder = "E-postanızı girin...", id = "email", type = "email", required = "required" })
+                        </div>
+                        <div class="form-group">
+                            <label>Konu</label> <span class="required">*</span> @Html.TextBoxFor(model => model.Contact.TopicTitle, new { @class = "form-control", placeholder = "Konu başlığınızı girin...", id = "subject", type = "text", required = "required" })
+                        </div>
+                        <div class="form-group">
+                            <label>Mesaj</label> <span class="required">*</span> @Html.TextAreaFor(model => model.Contact.Message, new { @class = "form-control", placeholder = "Mesajınızı girin...", id = "message", type = "text", required = "required" })
+                        </div>
+                        <input type="submit" value=" ★  Mesajı Gönder!" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

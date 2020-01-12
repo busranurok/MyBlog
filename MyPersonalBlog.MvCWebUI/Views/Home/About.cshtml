@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JobExperience>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+<head>
+    <link href="~/css/timeline.css" rel="stylesheet" />
+    <link href="~/css/progress.css" rel="stylesheet" />
+</head>
+
+
+<div class="container">
+    <h4>İş Tecrübelerim</h4>
+    <div class="row">
+        <div class="main-timeline10">
+
+            @foreach (JobExperience item in Model)
+            {
+                <div class="col-md-3 col-sm-6 timeline">
+                    <div class="timeline-inner">
+                        <div class="year">@item.StartDate.Month . @item.StartDate.Year - @item.EndDate.Month . @item.EndDate.Year</div>
+                        <div class="timeline-content">
+                            <div class="post">@item.Position</div>
+                            <p class="description">
+                                @item.WorkDescription
+                            </p>
+                        </div>
+                        <div class="timeline-icon">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+  
+  

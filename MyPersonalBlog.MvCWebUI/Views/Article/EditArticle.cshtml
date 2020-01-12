@@ -1,0 +1,87 @@
+﻿@model ArticleDetailViewModel
+@{
+    ViewBag.Title = "AddArticle";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@{
+    List<SelectListItem> categoryList = new List<SelectListItem>();
+    foreach (Category category in ViewBag.Categories)
+    {
+        SelectListItem item = new SelectListItem();
+        item.Text = category.CategoryTitle;
+        item.Value = category.Id.ToString();
+
+        categoryList.Add(item);
+    }
+}
+
+@using (Html.BeginForm("EditArticle", "Article", FormMethod.Post))
+{
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="container-fluid">
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Form Name -->
+                <legend>Article Form</legend>
+                <!-- Text input-->
+                @Html.HiddenFor(x=> x.Article.Id)
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="article_url">Resim URL</label>
+                    <div class="col-md-4">
+                       @Html.TextBoxFor(x=> x.Article.ImageURL,new { @class="form-control input-md" })
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="article_title">Title</label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(x=> x.Article.ArticleTitle, new { @class = "form-control input-md" })
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="article_date">IsDraft</label>
+                    <div class="col-md-4">
+                        @Html.CheckBoxFor(x=> x.Article.IsDraft)
+                    </div>
+                </div>
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="source_description">Content</label>
+                    <div class="col-md-4">
+                        @Html.TextAreaFor(x=> x.Article.ArticleContent, new { @class = "form-control input-md" })
+                    </div>
+                </div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="article_categories">Categories</label>
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(x => x.Article.CategoryId, categoryList, new { @class = "form-control" })
+                    </div>
+                </div>
+                <!-- Select Basic -->
+                @*<div class="form-group">
+                        <label class="col-md-4 control-label" for="source_tags">Tage</label>
+                        <div class="col-md-4">
+                            <select id="source_tags" name="source_tags" class="form-control">
+                                <option value="">Option one</option>
+                                <option value="">Option two</option>
+                            </select>
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                        <span></span>
+                        @Html.ActionLink("İptal", "ListArticle", "Article", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+}
+
+

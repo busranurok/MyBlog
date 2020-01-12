@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67803659-1598-4DD1-9B24-84D4DEE319DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyPersonalBlog</RootNamespace>
+    <AssemblyName>MyPersonalBlog</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAdditionalInfoDal.cs" />
+    <Compile Include="Abstract\IArticleDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICertificateDal.cs" />
+    <Compile Include="Abstract\ICommentDal.cs" />
+    <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IDislikedDal.cs" />
+    <Compile Include="Abstract\IDisplayedDal.cs" />
+    <Compile Include="Abstract\IEducationDal.cs" />
+    <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\IJobExperienceDal.cs" />
+    <Compile Include="Abstract\ILikedDal.cs" />
+    <Compile Include="Abstract\ISeminarDal.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
+    <Compile Include="Abstract\ISubscriberDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdditionalInfoDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfArticleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBlogContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCertificateDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCommentDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfContactDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfDislikedDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfDisplayedDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfEducationDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EntityFramework\EfJobExperienceDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfLikedDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSeminarDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSkillDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSubscriberDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Migrations\201906031656554_First_Migration.cs" />
+    <Compile Include="Migrations\201906031656554_First_Migration.Designer.cs">
+      <DependentUpon>201906031656554_First_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906071413009_Second_Migration.cs" />
+    <Compile Include="Migrations\201906071413009_Second_Migration.Designer.cs">
+      <DependentUpon>201906071413009_Second_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906071949040_Third_Migration.cs" />
+    <Compile Include="Migrations\201906071949040_Third_Migration.Designer.cs">
+      <DependentUpon>201906071949040_Third_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906132000275_Four_Migration.cs" />
+    <Compile Include="Migrations\201906132000275_Four_Migration.Designer.cs">
+      <DependentUpon>201906132000275_Four_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906261153036_Five_Migration.cs" />
+    <Compile Include="Migrations\201906261153036_Five_Migration.Designer.cs">
+      <DependentUpon>201906261153036_Five_Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPersonalBlog.Entities\MyPersonalBlog.Entities.csproj">
+      <Project>{552C8FEC-17E9-45A3-AADB-B16D7FC2ED64}</Project>
+      <Name>MyPersonalBlog.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyPersonelBlog.Common\MyPersonelBlog.Common.csproj">
+      <Project>{4a45509c-aa1e-472a-8d2e-c080f94cdeff}</Project>
+      <Name>MyPersonelBlog.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906031656554_First_Migration.resx">
+      <DependentUpon>201906031656554_First_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906071413009_Second_Migration.resx">
+      <DependentUpon>201906071413009_Second_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906071949040_Third_Migration.resx">
+      <DependentUpon>201906071949040_Third_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906132000275_Four_Migration.resx">
+      <DependentUpon>201906132000275_Four_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261153036_Five_Migration.resx">
+      <DependentUpon>201906261153036_Five_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

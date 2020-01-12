@@ -1,0 +1,6 @@
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\bin\Debug\MyPersonelBlog.Common.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\bin\Debug\MyPersonelBlog.Common.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\obj\Debug\MyPersonelBlog.Common.csproj.CoreCompileInputs.cache
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\obj\Debug\MyPersonelBlog.Common.dll
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\obj\Debug\MyPersonelBlog.Common.pdb
+C:\Users\HBO\source\repos\MyPersonalBlog.MvCWebUI\MyPersonelBlog.Common\obj\Debug\MyPersonelBlog.Common.csprojAssemblyReference.cache
